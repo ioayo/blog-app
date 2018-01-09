@@ -27,8 +27,8 @@ class PostsNew extends Component {
                         component={this.renderField}
                     />
                     <Field
-                        label="Tags"
-                        name="tags"
+                        label="Categories"
+                        name="categories"
                         component={this.renderField}
                     />
                     <Field 
@@ -42,6 +42,20 @@ class PostsNew extends Component {
     }
 }
 
+const validate = (values) => {
+    // console.log(values) -> { title: 'example', categories: 'example_cat', content: ' '}
+    const errors = {};
+
+    //Validate the inputs from 'values'
+
+    
+    //If errors is empty, the form is fine to submit
+    //If errors has *any* props, redux form assumed form is invalid
+    return errors;
+
+}
+
 export default reduxForm({
-    form: 'PostsNewForm'
+    form: 'PostsNewForm',
+    validate
 })(PostsNew);
